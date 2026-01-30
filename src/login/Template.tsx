@@ -61,10 +61,11 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                     <div className="flex justify-center items-center">
                         {/* <img src={livePoisedLogoPngUrl} alt="Iyota Prep Logo" className="h-16" /> */}
                         <img src={livePoisedLogoPngUrl} width={110} />
-                        <div>
-                            <h1 className="capitaliz inline-block text-6xl font-extrabold bg-gradient-to-r from-orange-500 to-green-600 bg-clip-text text-transparent">
+                        <div className="ml-4 text-start">
+                            <h1 className="capitaliz text-5xl font-extrabold bg-gradient-to-r from-orange-500 to-green-600 bg-clip-text text-transparent">
                                 IyotaPrep
                             </h1>
+                            <h2 className="text-slate-500 dark:text-slate-400 text-sm font-bold">EXAM PREP</h2>
                         </div>
                     </div>
                 </div>
