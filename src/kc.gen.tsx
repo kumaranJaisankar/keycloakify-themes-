@@ -9,9 +9,9 @@
 
 import { lazy, Suspense, type ReactNode } from "react";
 
-export type ThemeName = "live-poised-theme";
+export type ThemeName = "iyota-prep-theme";
 
-export const themeNames: ThemeName[] = ["live-poised-theme"];
+export const themeNames: ThemeName[] = ["iyota-prep-theme"];
 
 export type KcEnvName = never;
 

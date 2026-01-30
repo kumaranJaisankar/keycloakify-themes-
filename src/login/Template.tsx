@@ -7,14 +7,14 @@ import { useSetClassName } from "keycloakify/tools/useSetClassName";
 import { useInitialize } from "keycloakify/login/Template.useInitialize";
 import type { I18n } from "./i18n";
 import type { KcContext } from "./KcContext";
-import livePoisedLogoPngUrl from "./assets/img/live_poised_logo.png";
+// import livePoisedLogoPngUrl from "./assets/img/live_poised_logo.png";
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {
         displayInfo = false,
         displayMessage = true,
         displayRequiredFields = false,
-        headerNode,
+        // headerNode,
         socialProvidersNode = null,
         infoNode = null,
         documentTitle,
@@ -55,9 +55,13 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     return (
         <div className={kcClsx("kcLoginClass")}>
             <div id="kc-header" className={`${kcClsx("kcHeaderClass")} flex justify-center align-center`}>
-                <div id="kc-header-wrapper" className={`${kcClsx("kcHeaderWrapperClass")} `}>
+                {/* <div id="kc-header-wrapper" className={`${kcClsx("kcHeaderWrapperClass")} `}> */}
+                <div id="kc-header-wrapper" className="mt-10">
                     {/* {msg("loginTitleHtml", realm.displayNameHtml)} */}
-                    <img src={livePoisedLogoPngUrl} width={100} />
+                    <h1 className="capitaliz inline-block text-6xl font-extrabold bg-gradient-to-r from-blue-500 to-pink-600 bg-clip-text text-transparent">
+                        IyotaPrep
+                    </h1>
+                    {/* <img src={livePoisedLogoPngUrl} width={100} /> */}
                 </div>
             </div>
             <div className={kcClsx("kcFormCardClass")}>
@@ -98,7 +102,10 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                     )}
                     {(() => {
                         const node = !(auth !== undefined && auth.showUsername && !auth.showResetCredentials) ? (
-                            <h1 id="kc-page-title">{headerNode}</h1>
+                            <h1 id="kc-page-title" className="font-bold text-slate-600 dark:text-slate-100">
+                                LOGIN HERE
+                                {/* {headerNode} */}
+                            </h1>
                         ) : (
                             <div id="kc-username" className={kcClsx("kcFormGroupClass")}>
                                 <label id="kc-attempted-username">{auth.attemptedUsername}</label>

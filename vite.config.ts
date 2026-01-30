@@ -7,7 +7,7 @@ export default defineConfig({
     plugins: [
         react(),
         keycloakify({
-            themeName: ["live-poised-theme"],
+            themeName: ["iyota-prep-theme"],
             accountThemeImplementation: "none"
         })
     ]
