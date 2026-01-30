@@ -7,7 +7,7 @@ import { useSetClassName } from "keycloakify/tools/useSetClassName";
 import { useInitialize } from "keycloakify/login/Template.useInitialize";
 import type { I18n } from "./i18n";
 import type { KcContext } from "./KcContext";
-// import livePoisedLogoPngUrl from "./assets/img/live_poised_logo.png";
+import livePoisedLogoPngUrl from "./assets/img/iyotaprep-logo.svg";
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {
@@ -58,10 +58,15 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                 {/* <div id="kc-header-wrapper" className={`${kcClsx("kcHeaderWrapperClass")} `}> */}
                 <div id="kc-header-wrapper" className="mt-10">
                     {/* {msg("loginTitleHtml", realm.displayNameHtml)} */}
-                    <h1 className="capitaliz inline-block text-6xl font-extrabold bg-gradient-to-r from-blue-500 to-pink-600 bg-clip-text text-transparent">
-                        IyotaPrep
-                    </h1>
-                    {/* <img src={livePoisedLogoPngUrl} width={100} /> */}
+                    <div className="flex justify-center items-center">
+                        {/* <img src={livePoisedLogoPngUrl} alt="Iyota Prep Logo" className="h-16" /> */}
+                        <img src={livePoisedLogoPngUrl} width={110} />
+                        <div>
+                            <h1 className="capitaliz inline-block text-6xl font-extrabold bg-gradient-to-r from-orange-500 to-green-600 bg-clip-text text-transparent">
+                                IyotaPrep
+                            </h1>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className={kcClsx("kcFormCardClass")}>
