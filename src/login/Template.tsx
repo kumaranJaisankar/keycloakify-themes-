@@ -13,7 +13,6 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {
         displayInfo = false,
         displayMessage = true,
-        displayRequiredFields = false,
         // headerNode,
         socialProvidersNode = null,
         infoNode = null,
@@ -34,7 +33,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     useEffect(() => {
         document.title = documentTitle ?? msgStr("loginTitle", realm.displayName);
-    }, []);
+    }, [documentTitle, msgStr, realm.displayName]);
 
     useSetClassName({
         qualifiedName: "html",
@@ -94,19 +93,36 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                     </div>
                 )}
 
+                {/* Visual Section */}
+                <div className="visual-section flex items-center justify-center">
+                    <div className="visual-pattern"></div>
+                    
+                    <div className="relative z-20 flex items-center justify-center w-full p-16">
+                        <img 
+                            src={livePoisedLogoPngUrl} 
+                            className="w-full max-w-[300px] h-auto object-contain drop-shadow-2xl animate-pulse-slow" 
+                            alt="Large Logo" 
+                        />
+                    </div>
+                    
+                    {/* Decorative Blobs */}
+                    <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-teal-200/10 blur-[100px] rounded-full"></div>
+                    <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-purple-200/10 blur-[100px] rounded-full"></div>
+                </div>
+
                 {/* Form Section */}
-                <div className="form-section">
-                    <header className="mb-6">
+                <div className="form-section !w-1/2">
+                    <header className="mb-4">
                         {/* Mobile Logo - Only visible on small screens */}
-                        <img src={livePoisedLogoPngUrl} className="h-12 w-auto mb-10 mx-auto md:hidden" alt="Logo" />
+                        <img src={livePoisedLogoPngUrl} className="h-12 w-auto mb-8 mx-auto md:hidden" alt="Logo" />
                         
                         {(() => {
                             const node = !(auth !== undefined && auth.showUsername && !auth.showResetCredentials) ? (
-                                <div className="space-y-1">
-                                    <h1 id="kc-page-title" className="page-title text-teal-bran">
+                                <div className="space-y-0.5">
+                                    <h1 id="kc-page-title" className="page-title dark:text-white">
                                       Welcome to <span className="text-teal-brand">LivePoised</span>
                                     </h1>
-                                    <p className="page-subtitle !mb-0">
+                                    <p className="page-subtitle !mb-2">
                                         Please sign in to your account
                                     </p>
                                 </div>
@@ -166,7 +182,10 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                                         id="try-another-way"
                                         className="text-xs font-medium text-slate-500 hover:text-teal-600 transition-colors"
                                         onClick={() => {
-                                            document.forms["kc-select-try-another-way-form" as never].requestSubmit();
+                                            const form = document.forms["kc-select-try-another-way-form" as any];
+                                            if (form) {
+                                                form.requestSubmit();
+                                            }
                                             return false;
                                         }}
                                     >
@@ -192,23 +211,6 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                             )}
                         </div>
                     </div>
-                </div>
-
-                {/* Visual Section */}
-                <div className="visual-section flex items-center justify-center">
-                    <div className="visual-pattern"></div>
-                    
-                    <div className="relative z-20 flex items-center justify-center w-full p-16">
-                        <img 
-                            src={livePoisedLogoPngUrl} 
-                            className="w-full max-w-[300px] h-auto object-contain drop-shadow-2xl animate-pulse-slow" 
-                            alt="Large Logo" 
-                        />
-                    </div>
-                    
-                    {/* Decorative Blobs */}
-                    <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-teal-200/10 blur-[100px] rounded-full"></div>
-                    <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-purple-200/10 blur-[100px] rounded-full"></div>
                 </div>
             </div>
         </div>
