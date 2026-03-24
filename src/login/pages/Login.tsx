@@ -32,7 +32,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
             displayInfo={realm.password && realm.registrationAllowed && !registrationDisabled}
             infoNode={
                 <div id="kc-registration-container">
-                    <div id="kc-registration">
+                    <div id="kc-registration" className="text-center !mb-4">
                         <span>
                             {msg("noAccount")}{" "}
                             <a tabIndex={8} href={url.registrationUrl}>
@@ -92,8 +92,8 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                         {!realm.loginWithEmailAllowed
                                             ? msg("username")
                                             : !realm.registrationEmailAsUsername
-                                              ? msg("usernameOrEmail")
-                                              : msg("email")}
+                                                ? msg("usernameOrEmail")
+                                                : msg("email")}
                                     </label>
                                     <input
                                         tabIndex={2}
