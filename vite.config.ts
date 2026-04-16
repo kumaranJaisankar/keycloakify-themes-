@@ -10,5 +10,6 @@ export default defineConfig({
             themeName: ["iyota-prep-theme"],
             accountThemeImplementation: "none"
         })
-    ]
+    ],
+    assetsInclude: ["**/*.lottie"]
 });

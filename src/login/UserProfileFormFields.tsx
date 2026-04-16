@@ -43,7 +43,7 @@ export default function UserProfileFormFields(props: UserProfileFormFieldsProps<
     });
 
     return (
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-3">
             {orderedFields.map(({ attribute, displayableErrors, valueOrValues }) => {
                 return (
                     <Fragment key={attribute.name}>
@@ -65,7 +65,7 @@ export default function UserProfileFormFields(props: UserProfileFormFieldsProps<
                             style={{
                                 display:
                                     attribute.annotations.inputType === "hidden" ||
-                                    (attribute.name === "password-confirm" && !doMakeUserConfirmPassword)
+                                        (attribute.name === "password-confirm" && !doMakeUserConfirmPassword)
                                         ? "none"
                                         : undefined
                             }}
