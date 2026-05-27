@@ -8,8 +8,7 @@ import { useInitialize } from "keycloakify/login/Template.useInitialize";
 import type { I18n } from "./i18n";
 import type { KcContext } from "./KcContext";
 import livePoisedLogoPngUrl from "./assets/img/Iyotaprep-app-logo.png";
-import studentLoginLottieUrl from "./assets/img/student-login.lottie";
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import iyotaprepLogoUrl from "./assets/img/iyotaprep-logo.svg";
 
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
@@ -70,30 +69,141 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     }
 
     return (
-        <div className="h-screen w-full bg-white dark:bg-slate-950 flex flex-col md:flex-row overflow-hidden font-sans">
+        <div className="relative h-screen w-full bg-slate-50 dark:bg-[#050505] flex flex-col md:flex-row overflow-hidden font-sans transition-colors duration-300">
+            {/* Dynamic Full-Screen Background spanning both columns */}
+            <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+                {/* Grid Pattern (Ruled Paper Feel) */}
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0wIDEwaDQwdjJIMHoiIGZpbGw9IiMzMzMiIGZpbGwtb3BhY2l0eT0iMC4xIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4KPC9zdmc+')] opacity-20 dark:opacity-20 mix-blend-multiply dark:mix-blend-screen" />
 
-            {/* <div className="kc-split-layout bg-slate-50 dark:bg-[#0B0C10] text-slate-900 dark:text-white font-sans"> */}
+                {/* Faint Handwriting / Academic Scribbles */}
+                <div className="absolute inset-0 w-full h-full opacity-[0.1] dark:opacity-[0.1] pointer-events-none overflow-hidden font-['Caveat',_'Bradley_Hand',_'Brush_Script_MT',_'Comic_Sans_MS',_cursive] text-blue-500 dark:text-blue-500">
+                    {/* SVG Pen Strokes */}
+                    {/* <svg className="absolute rotate-12 w-full h-full stroke-current fill-none pointer-events-none" preserveAspectRatio="none">
+                        <path d="M 5% 30% Q 15% 25% 25% 35% T 45% 30%" strokeWidth="2" opacity="0.8" strokeDasharray="4,6" />
+                        <path d="M 85vw 15vh Q 90vw 35vh 75vw 45vh" strokeWidth="2.5" opacity="0.8" strokeDasharray="10,15" />
+                        <ellipse cx="55%" cy="80%" rx="140" ry="90" strokeWidth="2" opacity="0.8" transform="rotate(-15 65% 80%)" />
+                    </svg> */}
+
+                    <div className="absolute top-[18%] left-[8%] md:left-[12%] -rotate-[8deg] select-none text-2xl md:text-3xl tracking-wider">
+                        {`∫ e^x dx = e^x + C`}
+                    </div>
+                    <div className="absolute top-[45%] right-[10%] md:right-[15%] rotate-[6deg] select-none text-xl md:text-3xl tracking-widest leading-relaxed">
+                        Innovation <br /> &nbsp;&nbsp;&nbsp;through Learning
+                    </div>
+                    <div className="absolute bottom-[10%] left-[10%] md:left-[5%] rotate-[12deg] select-none text-3xl md:text-5xl opacity-80">
+                        Unlock Your Potential...
+                    </div>
+                    <div className="absolute top-[10%] right-[25%] md:right-[40%] rotate-[3deg] select-none text-xl md:text-2xl">
+                        Σ (n=1, ∞) 1/n² = π²/6
+                    </div>
+                    <div className="absolute bottom-[50%] right-[25%] md:right-[36%] rotate-[10deg] select-none text-lg md:text-xl">
+                        "The beautiful thing about learning is..."
+                    </div>
+                </div>
+
+                {/* Glowing Orbs */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px] rounded-full bg-gradient-to-tr from-indigo-500/20 via-purple-500/10 to-transparent blur-[120px] animate-glow mix-blend-screen" />
+                <div className="absolute top-1/4 -right-1/4 w-[400px] h-[400px] rounded-full bg-blue-400/20 blur-[100px] animate-glow mix-blend-screen" style={{ animationDelay: '2s' }} />
+                <div className="absolute -bottom-1/4 -left-1/4 w-[500px] h-[500px] rounded-full bg-indigo-600/20 blur-[100px] animate-glow mix-blend-screen" style={{ animationDelay: '4s' }} />
+            </div>
+
             {/* Left Column - Glow & Orbit */}
 
-            {/* Left Section: Hero Orbital (60% Width) */}
-            <div className="relative w-full md:w-[65%] h-[40%] md:h-full bg-slate-50 dark:bg-slate-900/50 flex items-center justify-center p-8 overflow-hidden">
-                {/* Background Gradients */}
-                <div className="absolute top-0 left-0 w-full h-full">
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-500/10 blur-[120px] rounded-full" />
-                    <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] bg-blue-500/5 blur-[100px] rounded-full" />
+            {/* Left Section: Hero Branding */}
+            <div className="relative z-10 w-full md:w-[50%] lg:w-[55%] h-[40%] md:h-full overflow-hidden group flex items-center justify-center">
+                {/* Injected Styles for Animations */}
+                <style>{`
+                    @keyframes subtleZoomIn {
+                        0% { transform: scale(0); opacity: 0; filter: blur(10px); }
+                        100% { transform: scale(1.2); opacity: 1; filter: blur(0); }
+                    }
+                    @keyframes float {
+                        0%, 100% { transform: translateY(0); }
+                        50% { transform: translateY(-15px); }
+                    }
+                    @keyframes glowPulse {
+                        0%, 100% { opacity: 0.3; transform: scale(1); }
+                        50% { opacity: 0.6; transform: scale(1.05); }
+                    }
+                    .animate-zoom-in {
+                        animation: subtleZoomIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                    }
+                    .animate-float {
+                        animation: float 8s ease-in-out infinite;
+                    }
+                    .animate-glow {
+                        animation: glowPulse 6s ease-in-out infinite;
+                    }
+                    .glass-panel {
+                        background: rgba(255, 255, 255, 0.7);
+                        backdrop-filter: blur(20px);
+                        -webkit-backdrop-filter: blur(20px);
+                        border: 1px solid rgba(0, 0, 0, 0.05);
+                    }
+                    .dark .glass-panel {
+                        background: rgba(255, 255, 255, 0.03);
+                        border: 1px solid rgba(255, 255, 255, 0.05);
+                    }
+                `}</style>
+
+                {/* Main Content Area */}
+                <div className="relative z-10 w-full max-w-2xl px-8 flex flex-col items-center justify-center text-center">
+
+                    {/* Centerpiece Text */}
+                    <div className="animate-zoom-in w-full flex flex-col items-center">
+                        {/* Decorative Icon/Badge */}
+                        <div className="mb-10 p-4 rounded-2xl glass-panel shadow-xl animate-float">
+                            <div className="w-16 h-16 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-400 p-[1px]">
+                                <div className="w-full h-full rounded-[11px] bg-white dark:bg-[#050505] flex items-center justify-center transition-colors duration-300">
+                                    <img src={iyotaprepLogoUrl} className="w-10 h-10 object-contain" alt="IyotaPrep" />
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Title */}
+                        <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-slate-900 to-slate-500 dark:from-white dark:to-white/60 tracking-tight leading-tight pb-4 mb-2">
+                            IyotaPrep
+                        </h2>
+
+                        {/* Status/Badge */}
+                        {/* <div className="glass-panel px-6 py-2 mb-8 rounded-full opacity-0" style={{ animation: 'subtleZoomIn 1s ease-out 0.4s forwards' }}>
+                            <p className="text-xs font-bold text-indigo-600 dark:text-indigo-300/80 tracking-[0.25em] uppercase whitespace-nowrap">
+                                Admin & Faculty Portal
+                            </p>
+                        </div> */}
+
+                        {/* Proverb/Quote */}
+                        <div className="relative mt-2">
+                            <span className="absolute -top-6 -left-5 text-6xl text-indigo-500/20 -rotate-[20deg] dark:text-indigo-500/30 font-serif leading-none select-none">"</span>
+                            <h3 className="text-2xl md:text-3xl lg:text-4xl font-light text-slate-600 dark:text-slate-300 italic tracking-wide leading-relaxed">
+                                Imaginary <br className="hidden lg:block" />
+                                <span className="font-semibold text-slate-800 dark:text-white relative inline-block mx-2">
+                                    Isn't
+                                    <span className="absolute -bottom-1 left-0 w-full h-[3px] bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
+                                </span> Impossible
+                            </h3>
+                            <span className="absolute -top-4 -right-5 text-6xl text-indigo-500/20 rotate-[20deg] dark:text-indigo-500/30 font-serif leading-none select-none">"</span>
+                        </div>
+                    </div>
+
+                    {/* Bottom Space (Badge moved up) */}
+
+                </div>
+                <div className=" flex flex-row items-center gap-2 absolute top-2 left-10 z-50 p-2 rounded-full text-slate-800 dark:text-gray-200 "
+                >
+                    <a href="https://iyotaprep.vannadev.com/explore" className="outline-none focus:outline-none"> <img src={livePoisedLogoPngUrl} alt="Logo" className="w-30 h-14" /></a>
+                </div>
+                {/* Footer placed strictly within Left Column */}
+                <div className=" flex flex-row items-center gap-2 absolute bottom-2 left-50 z-50 p-2 rounded-full text-slate-800 dark:text-gray-200 ">
+                    <p className="text-slate-600 dark:text-slate-400/80 text-xs font-medium tracking-wide">
+                        Iyota Prep v1.0.4 <span className="mx-2 hidden sm:inline">•</span><br className="sm:hidden" /> © 2026 Iyota Prep Inc.
+                    </p>
                 </div>
 
-                <div className="relative w-full max-w-lg aspect-square">
-                    <DotLottieReact
-                        src={studentLoginLottieUrl}
-                        loop
-                        autoplay
-                    />
-                </div>
             </div>
 
             {/* Right Column - Login */}
-            <div className="kc-right-column relative">
+            <div className="kc-right-column relative flex-1 flex flex-col min-h-screen md:min-h-full">
                 {/* Theme Toggle Button */}
                 <button
                     onClick={() => setIsDark(!isDark)}
@@ -102,18 +212,18 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                 >
                     {isDark ? "🌙" : "☀️"}
                 </button>
-                <div className=" flex flex-row items-center gap-2 absolute top-2 left-0 z-50 p-2 rounded-full text-slate-800 dark:text-gray-200 "
+                {/* <div className=" flex flex-row items-center gap-2 absolute top-2 left-0 z-50 p-2 rounded-full text-slate-800 dark:text-gray-200 "
                 >
                     <img src={livePoisedLogoPngUrl} alt="Logo" className="w-30 h-14" />
-                </div>
+                </div> */}
                 {/* Content Container */}
-                <div className="flex-1 flex flex-col justify-center px-8 sm:px-12 lg:px-12 xl:px-10 py-10 pt-20">
+                <div className="flex-1 flex flex-col justify-center items-center px-8 sm:px-12 lg:px-12 xl:px-10 py-10 ">
 
                     {/* Marketing Copy Removed by Request */}
 
                     {/* KC Form */}
-                    <div className="w-full max-w-md mx-auto lg:mx-0">
-                        <div className={kcClsx("kcFormCardClass")}>
+                    <div className="w-full max-w-md mx-auto relative z-10">
+                        <div className={clsx("glass-panel !rounded-3xl !border-0 sm:!border shadow-2xl !p-6 sm:!p-10", kcClsx("kcFormCardClass"))}>
                             <header className={kcClsx("kcFormHeaderClass")}>
                                 {enabledLanguages.length > 1 && (
                                     <div className={kcClsx("kcLocaleMainClass")} id="kc-locale">
@@ -238,13 +348,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                     </div>
                 </div>
 
-                {/* Footer */}
-                <div className="px-8 sm:px-16 lg:px-24 xl:px-32 py-6 border-t border-indigo-500/10 mt-auto">
-                    <p className="text-gray-500 text-xs font-medium text-center lg:text-left">
-                        Iyota Prep v1.0.4 <span className="mx-2 hidden sm:inline">•</span><br className="sm:hidden" /> © 2026 Iyota Prep Inc.
-                    </p>
-                </div>
             </div>
-        </div>
+        </div >
     );
 }
