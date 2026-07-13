@@ -7,7 +7,7 @@ export default defineConfig({
     plugins: [
         react(),
         keycloakify({
-            themeName: ["iyota-prep-theme"],
+            themeName: ["rcip-keycloak-theme"],
             accountThemeImplementation: "none"
         })
     ],
