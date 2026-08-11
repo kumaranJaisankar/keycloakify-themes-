@@ -11,8 +11,8 @@ import rcipBrandLogoUrl from "./assets/img/rcip-brand-logo.png";
 import rcipFaviconUrl from "./assets/img/rcip-favicon.svg";
 import cliffLogoUrl from "./assets/img/brands_logo/Cliff_logo.png";
 import corekeyLogoUrl from "./assets/img/brands_logo/corekey_logo.png";
-import vannaLogoUrl from "./assets/img/brands_logo/vanna_logo.png";
-import caLogoUrl from "./assets/img/brands_logo/CA_logo.png";
+import vannaLogoUrl from "./assets/img/brands_logo/vanna_logo_v3.png";
+import caLogoUrl from "./assets/img/brands_logo/CA_logo_v3.png";
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {
@@ -125,21 +125,15 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                 {/* Footer of Left Column */}
                 <div className="relative z-20 mt-auto pt-4 border-t border-white/10 flex flex-col items-center gap-3 w-full">
                     {/* Brand Logos */}
-                    <div className="flex items-center justify-evenly w-[70%] select-none bg-white border-md" style={{ borderRadius: "10px" }}>
-                        {/* <img src={corekeyLogoUrl} alt="Corekey Logo" className="h-12 md:h-14 lg:h-16 max-w-[160px] w-auto object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" /> */}
-                        <div className="flex-1 flex justify-center">
-                            <img src={caLogoUrl} alt="CA Logo" className="h-8 md:h-9 lg:h-10 max-w-[120px] w-auto object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
-                        </div>
-                        <div className="flex-1 flex justify-center">
-                            <img src={vannaLogoUrl} alt="Vanna Logo" className="h-7 md:h-8 lg:h-9 max-w-[100px] w-auto object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
-                        </div>
-                        <div className="flex-1 flex justify-center">
-                            <img src={cliffLogoUrl} alt="Cliff Logo" className="h-12 md:h-14 lg:h-16 max-w-[140px] w-auto object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
-                        </div>
+                    <div className="flex items-center justify-between w-[90%] sm:w-[85%] md:w-[80%] lg:w-[75%] select-none bg-white py-3.5 px-6 sm:px-8 shadow-md rounded-xl border border-slate-100/80">
+                        <img src={caLogoUrl} alt="CA Logo" className="h-6 sm:h-7 md:h-8 w-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300" />
+                        <img src={vannaLogoUrl} alt="Vanna Logo" className="h-[16px] sm:h-[20px] md:h-[24px] w-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300" />
+                        <img src={cliffLogoUrl} alt="Cliff Logo" className="h-6 sm:h-7 md:h-8 w-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300" />
                     </div>
                     {/* Copyright Text */}
                     <div className="w-full text-center text-blue-200/60 text-xs font-light tracking-wide">
                         © 2026 RCIP. All rights reserved.
+                        {/* Designed & Developed by Vanna */}
                     </div>
                 </div>
             </div>
@@ -349,7 +343,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                 </div>
 
                 {/* Right Column Footer: Restricted Access Warning & Support Links */}
-                <div className="mt-auto flex flex-col items-center gap-3 text-center pt-6">
+                <div className="mt-auto flex flex-col items-center gap-2 text-center pt-6">
                     <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400 font-medium">
                         <svg
                             className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500"
@@ -373,6 +367,17 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                         <span className="text-slate-300 dark:text-slate-700 select-none">•</span>
                         <a href="https://rcip.in/privacy-policy" className="hover:underline" target="_blank" rel="noopener noreferrer">
                             Privacy Policy
+                        </a>
+                    </div>
+                    <div className="text-[10px] text-slate-500 dark:text-slate-500 font-medium tracking-wide mt-1">
+                        Designed & Developed by{" "}
+                        <a
+                            href="https://vannainfotech.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#299DD0] dark:text-blue-400 font-semibold hover:no-underline"
+                        >
+                            vanna infotech
                         </a>
                     </div>
                 </div>
