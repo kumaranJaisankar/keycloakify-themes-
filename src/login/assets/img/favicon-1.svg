@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+    <defs>
+        <style>
+            :root {
+                --badge-bg: url(#badgeGradLight);
+                --badge-stroke: rgba(0, 59, 112, 0.15);
+                --badge-stroke-width: 2px;
+                --emblem-primary: #FFFFFF;
+                --emblem-cyan: #00E5FF;
+                --emblem-secondary: #E0F2FE;
+                --emblem-stripe: #38BDF8;
+                --emblem-dot: #00E5FF;
+                --emblem-shadow: rgba(0, 0, 0, 0.25);
+            }
+
+            .rcip-badge {
+                fill: var(--badge-bg);
+                stroke: var(--badge-stroke);
+                stroke-width: var(--badge-stroke-width);
+                transition: all 0.3s ease;
+            }
+
+            .rcip-emblem-primary { fill: var(--emblem-primary); }
+            .rcip-emblem-cyan { fill: var(--emblem-cyan); }
+            .rcip-emblem-secondary { fill: var(--emblem-secondary); opacity: 0.9; }
+            .rcip-emblem-stripe { fill: var(--emblem-stripe); }
+            .rcip-emblem-dot { fill: var(--emblem-dot); }
+
+            /* Dark Theme Mode (Browser tab in dark theme) */
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --badge-bg: url(#badgeGradDark);
+                    --badge-stroke: rgba(255, 255, 255, 0.35);
+                    --badge-stroke-width: 6px;
+                    --emblem-primary: #FFFFFF;
+                    --emblem-cyan: #38BDF8;
+                    --emblem-secondary: #F0F9FF;
+                    --emblem-stripe: #7DD3FC;
+                    --emblem-dot: #38BDF8;
+                }
+            }
+        </style>
+
+        <!-- Badge Background Gradients -->
+        <linearGradient id="badgeGradLight" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0066CC" />
+            <stop offset="50%" stop-color="#004499" />
+            <stop offset="100%" stop-color="#002255" />
+        </linearGradient>
+
+        <linearGradient id="badgeGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0284C7" />
+            <stop offset="50%" stop-color="#0369A1" />
+            <stop offset="100%" stop-color="#0C4A6E" />
+        </linearGradient>
+
+        <!-- Subtle drop shadow filter for 3D depth -->
+        <filter id="emblemShadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.3" />
+        </filter>
+    </defs>
+
+    <!-- High-Contrast Squircle Badge Background -->
+    <rect class="rcip-badge" x="12" y="12" width="488" height="488" rx="108" ry="108" />
+
+    <!-- RCIP Emblem -->
+    <g id="rcip-emblem" filter="url(#emblemShadow)">
+        <path class="rcip-emblem-primary" d="M 280.88,75.0 L 234.08,102.85 L 231.71,105.81 L 232.3,241.48 L 231.12,250.96 L 225.19,250.37 L 225.19,166.83 L 222.23,166.83 L 218.08,170.39 L 207.42,175.72 L 199.12,182.24 L 190.83,186.38 L 173.05,198.23 L 172.46,250.96 L 157.06,250.96 L 154.69,252.15 L 123.29,284.14 L 122.1,286.51 L 121.51,411.52 L 114.4,405.01 L 109.66,393.16 L 109.66,178.68 L 111.44,172.17 L 119.14,162.09 L 122.1,159.72 L 132.17,155.58 L 215.71,155.58 L 221.04,152.61 L 223.41,149.06 L 223.41,136.02 L 222.23,134.84 L 133.95,134.84 L 132.77,136.02 L 126.84,136.02 L 125.66,137.21 L 122.1,137.21 L 121.51,138.39 L 117.36,138.99 L 106.1,146.1 L 99.59,152.61 L 93.07,163.28 L 90.11,172.76 L 90.11,399.08 L 94.26,410.93 L 101.36,421.0 L 106.1,425.74 L 116.18,432.26 L 120.32,434.04 L 126.25,434.63 L 129.21,436.41 L 130.4,435.82 L 130.4,289.47 L 131.58,288.29 L 155.28,288.29 L 156.46,287.1 L 157.06,260.44 L 158.24,259.26 L 254.22,259.85 L 257.18,261.04 L 261.92,268.15 L 261.92,346.94 L 263.11,346.94 L 280.88,327.99 Z" />
+        <path class="rcip-emblem-primary" d="M 419.52,230.82 L 414.78,232.0 L 388.12,248.59 L 386.34,250.96 L 378.05,255.7 L 343.69,282.96 L 322.36,303.1 L 314.65,309.03 L 282.66,341.02 L 247.71,380.12 L 244.74,380.72 L 216.9,361.76 L 212.16,361.76 L 209.79,364.13 L 209.79,366.5 L 213.34,371.83 L 222.82,392.56 L 224.6,393.75 L 226.97,399.67 L 231.12,405.6 L 231.71,408.56 L 248.89,435.82 L 251.26,435.82 L 253.04,431.67 L 255.41,429.89 L 264.89,416.26 L 265.48,413.89 L 268.44,411.52 L 272.0,405.6 L 277.92,399.08 L 280.29,394.34 L 283.25,391.97 L 292.73,378.35 L 325.32,338.65 L 325.32,337.46 L 360.87,297.18 L 360.87,295.99 L 369.16,287.7 L 369.75,285.92 L 379.23,277.03 L 383.97,270.52 L 410.04,243.85 L 421.3,233.19 Z" />
+        <path class="rcip-emblem-secondary" d="M 375.09,297.18 L 372.72,297.18 L 372.72,298.36 L 354.94,317.91 L 354.94,394.93 L 350.2,405.01 L 346.06,409.75 L 340.72,413.3 L 332.43,416.26 L 272.59,417.45 L 261.92,431.67 L 260.74,435.82 L 334.8,436.41 L 337.76,434.63 L 348.43,432.26 L 356.13,427.52 L 362.64,421.6 L 367.38,415.67 L 372.12,406.78 L 373.9,396.71 L 375.09,394.93 Z" />
+        <path class="rcip-emblem-cyan" d="M 287.99,104.62 L 287.99,172.17 L 335.39,200.6 L 336.58,200.01 L 337.17,138.39 L 333.61,134.84 L 311.1,119.44 L 296.88,108.18 L 292.14,105.81 L 290.96,104.03 Z" />
+        <path class="rcip-emblem-cyan" d="M 167.13,365.9 L 156.46,370.64 L 149.95,377.16 L 144.02,389.01 L 144.02,402.64 L 148.17,412.71 L 154.09,419.82 L 162.98,425.15 L 168.91,425.74 L 170.09,426.93 L 177.79,426.93 L 178.98,425.74 L 184.9,425.15 L 190.83,422.19 L 196.16,418.04 L 199.72,413.3 L 204.45,401.45 L 204.45,390.79 L 200.31,380.12 L 193.2,371.83 L 186.68,367.68 L 182.53,367.09 L 181.35,365.9 Z" />
+        <path class="rcip-emblem-secondary" d="M 344.87,176.91 L 343.09,178.09 L 343.09,269.92 L 344.87,271.11 L 365.01,254.52 L 375.09,248.0 L 375.09,195.27 Z" />
+        <path class="rcip-emblem-stripe" d="M 155.87,304.29 L 155.87,308.43 L 158.24,310.8 L 234.08,310.8 L 236.45,309.62 L 236.45,303.1 L 235.26,301.92 L 157.65,301.92 Z" />
+        <path class="rcip-emblem-stripe" d="M 155.87,328.58 L 159.43,331.54 L 228.15,331.54 L 231.12,329.76 L 231.71,324.43 L 230.52,322.06 L 158.24,322.06 L 155.87,323.84 Z" />
+        <path class="rcip-emblem-stripe" d="M 155.87,343.98 L 155.87,348.72 L 158.24,351.09 L 202.09,351.09 L 203.86,349.91 L 204.45,343.39 L 202.68,341.61 L 158.83,341.61 Z" />
+        <path class="rcip-emblem-dot" d="M 296.88,220.16 L 297.47,232.6 L 308.14,232.0 L 308.14,220.16 Z" />
+        <path class="rcip-emblem-dot" d="M 315.84,220.16 L 316.43,232.0 L 327.1,232.0 L 327.1,220.16 Z" />
+        <path class="rcip-emblem-dot" d="M 315.84,240.3 L 315.84,252.15 L 327.1,252.15 L 326.5,239.71 Z" />
+        <path class="rcip-emblem-dot" d="M 296.88,240.3 L 296.88,252.15 L 308.14,252.15 L 307.55,239.71 Z" />
+    </g>
+</svg>

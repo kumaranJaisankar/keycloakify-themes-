@@ -215,3 +215,16 @@ span {
 hr {
     @apply my-4 border-t border-stone-300 dark:border-stone-600;
 }
+
+@media (max-width: 767px) {
+    .mobile-hidden {
+        display: none !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .desktop-hidden {
+        display: none !important;
+    }
+}
+
